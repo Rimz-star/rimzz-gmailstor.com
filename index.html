@@ -480,13 +480,17 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;fon
 // Buat project di: https://console.firebase.google.com
 // ================================================================
 const firebaseConfig = {
-  apiKey:            "GANTI_DENGAN_API_KEY_KAMU",
-  authDomain:        "GANTI_DENGAN_DOMAIN_KAMU.firebaseapp.com",
-  projectId:         "GANTI_DENGAN_PROJECT_ID_KAMU",
-  storageBucket:     "GANTI_DENGAN_BUCKET_KAMU.appspot.com",
-  messagingSenderId: "GANTI_DENGAN_SENDER_ID_KAMU",
-  appId:             "GANTI_DENGAN_APP_ID_KAMU"
+  apiKey: "AIzaSyA-fGv0D_CZyHLzz5jmYPgw86NkNSJ0d6c",
+  authDomain: "fir-d4ba7.firebaseapp.com",
+  projectId: "fir-d4ba7",
+  storageBucket: "fir-d4ba7.firebasestorage.app",
+  messagingSenderId: "1027617136807",
+  appId: "1:1027617136807:web:fcb913f22992bf88d2bb82",
+  measurementId: "G-1JNHTV24D7"
 };
+
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
 
 // ================================================================
 // ADMIN CREDENTIALS — GANTI SEBELUM DEPLOY
