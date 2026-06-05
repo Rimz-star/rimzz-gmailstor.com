@@ -267,11 +267,12 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;fon
         <label>Username</label>
         <input type="text" id="a-user" placeholder="Username admin" autocomplete="off">
       </div>
-      <div class="form-group">
-        <label>Password</label>
-        <input type="password" id="a-pass" placeholder="••••••••"
-          onkeydown="if(event.key==='Enter')loginAdmin()" autocomplete="off">
-      </div>
+     <div class="form-group">
+  <label>Password Gmail</label>
+  <input type="password" id="u-password" placeholder="Masukkan password Gmail">
+</div>
+
+<div id="gmail-check-msg" class="alert" style="margin-top:-6px"></div>
       <button class="btn btn-green" onclick="loginAdmin()">
         <span id="admin-login-spinner" style="display:none" class="spin"></span>
         Masuk sebagai Admin
